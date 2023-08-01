@@ -102,17 +102,35 @@ function numeroMasGrande(arrayOfNums) {
        return numMayor
    }
 
-function multiplicarArgumentos() {
+   function multiplicarArgumentos() {
    // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto.
    // Si no se pasan argumentos retorna 0. Si se pasa un argumento, simplemente retórnalo.
    // [PISTA]: "arguments" es un arreglo.
    // Tu código:
+   let numMulti = 1;
+   if(arguments.length === 0){
+      return 0
+   }else if (arguments.length === 1){
+      return arguments[0]
+   }else {
+      for(let i = 0; i < arguments.length; i++){
+         numMulti = numMulti * arguments[i]
+       } 
+       return numMulti;
+   }
 }
-
+   
 function cuentoElementos(array) {
    // Desarrolla una función que retorne la cantidad de elementos del arreglo cuyo valor sea mayor que 18.
    // Tu código:
-}
+   let cantElem = 0;
+   for ( let i = 0; i < array.length; i++){
+       if (array[i] > 18){
+         cantElem = cantElem + 1
+       }
+      }
+      return cantElem;
+   }
 
 function diaDeLaSemana(numeroDeDia) {
    // Supongamos que los días de la semana se codifican como 1 = Domingo, 2 = Lunes y así sucesivamente.
