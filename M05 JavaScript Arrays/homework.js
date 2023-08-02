@@ -132,23 +132,40 @@ function cuentoElementos(array) {
       return cantElem;
    }
 
-function diaDeLaSemana(numeroDeDia) {
+   function diaDeLaSemana(numeroDeDia) {
    // Supongamos que los días de la semana se codifican como 1 = Domingo, 2 = Lunes y así sucesivamente.
    // Realiza una función que, dado el número del día de la semana, retorne: "Es fin de semana"
    // si el día corresponde a "Sábado" o "Domingo", y "Es dia laboral" en caso contrario.
    // Tu código:
-}
+      if (numeroDeDia === 1 || numeroDeDia === 7){
+         return "Es fin de semana";
+      }
+      else if(numeroDeDia > 1 && numeroDeDia < 7){
+         return "Es dia laboral";
+      }
+   }
 
 function empiezaConNueve(num) {
    // Esta función recibe por parámetro un número.
    // Debe retornar true si el entero inicia con 9 y false en otro caso.
    // Tu código:
+   let numeroString = num.toString();
+   if (numeroString[0] == 9){
+      return true;
+   }
+   return false;
 }
 
 function todosIguales(array) {
    // Si todos los elementos del arreglo son iguales, retornar true.
    // Caso contrario retornar false.
    // Tu código:
+   for(var i = 0; i < array.length -1; i++){
+      if(array[i] !== array[i+1]){
+          return false;
+      }
+   }
+       return true;
 }
 
 function mesesDelAño(array) {
@@ -156,6 +173,17 @@ function mesesDelAño(array) {
    // "Marzo" y "Noviembre", guardarlos en un nuevo arreglo y retornarlo.
    // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
    // Tu código:
+   var arrayMeses = [];
+   for (var i = 0; i < array.length; i++){
+      if (array[i] === "Enero" || array[i] === "Marzo" || array[i] === "Noviembre"){
+           arrayMeses.push(array[i]);
+      }
+   } 
+     if(arrayMeses.length === 3){
+      return arrayMeses;
+     }else {
+      return "No se encontraron los meses pedidos";
+     }
 }
 
 function tablaDelSeis() {
@@ -168,6 +196,13 @@ function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
+   var arrayNumeros = [];
+   for (var i = 0; i < array.length; i++){
+      if (array[i] > 100){
+         arrayNumeros.push(array[i])
+      }
+   }
+   return arrayNumeros;
 }
 
 /* ----------------------------------------------------------------------------------
